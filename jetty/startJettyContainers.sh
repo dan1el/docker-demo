@@ -1,10 +1,11 @@
 #!/bin/bash
-
+IFS=', ' read -a servers <<< "$1"
 if [ -z $1 ]
 then
 echo "Specify the number of containers to run"
 else
-for ((i = 1; i <= $1; i++)); do
-    sudo docker run -d -e VIRTUAL_HOST=instance-$i.dockerdemo.com dockerdemo/jetty
+for element in "${servers[@]}"
+do
+    sudo docker run -d -e VIRTUAL_HOST=instance-$servers[$i].dockerdemo.com dockerdemo/jetty
 done
 fi
