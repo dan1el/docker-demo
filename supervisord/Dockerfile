@@ -2,7 +2,7 @@
 #
 # VERSION               0.0.1
 
-FROM     daniel/sshd
+FROM     dockerdemo/sshd
 
 # make sure the package repository is up to date
 # RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
