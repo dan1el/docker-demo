@@ -3,7 +3,7 @@
 #
 
 # Pull base image.
-FROM daniel/supervisord
+FROM ubuntu
 
 # make sure the package repository is up to date
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
@@ -11,6 +11,7 @@ RUN apt-get update
 
 #dependencies
 RUN apt-get install -y --force-yes tzdata-java tzdata=2012b-1 openjdk-7-jre-headless tar
+RUN apt-get install -y wget
 
 #Jetty
 RUN adduser --system jetty
@@ -29,7 +30,6 @@ RUN chmod +x /start.sh
 #USER jetty
 
 # Define default command.
-CMD ["/bin/bash", "-e", "/start.sh"]
-
+CMD ["/opt/jetty/bin/jetty.sh", "-d", "run"]
 # Expose ports.
 EXPOSE 8080
