@@ -1,0 +1,22 @@
+upstream docker_containers {
+
+{{ range $host, $containers := groupBy $ "Env.VIRTUAL_HOST" }}
+{{ range $index, $value := $containers }}
+    {{ with $address := index $value.Addresses 0 }}
+    server {{ $address.IP }}:{{ $address.Port }};
+    {{ end }}
+{{ end }}
+{{ end }}
+
+}
+
+server {
+    listen 80;
+    location / {
+        proxy_pass http://docker_containers;
+    }
+location /nginx_status {
+  stub_status on;
+  access_log   off;
+}
+}
