@@ -1,0 +1,30 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+
+# 
+# NOTE: This script assumes that your EC2 access key and secret key exists as an environment variable
+# export AWS_ACCESS_KEY="AKXXXXXXXXXXXXXXX"
+# export AWS_SECRET_KEY="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+#
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "ubuntu_aws"
+  config.vm.box_url = "https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box"
+  config.vm.synced_folder "../.", "/vagrant", id: "vagrant-root"
+  config.vm.provider :aws do |aws, override|
+    aws.keypair_name = "docker-demo"
+    override.ssh.private_key_path = "~/.ssh/docker-demo.pem"
+    aws.instance_type = "t1.micro"
+    aws.security_groups = "sg-b7b670d2"
+    aws.ami = "ami-896c96fe"
+    override.ssh.username = "ubuntu"
+    aws.tags = {
+      'Name' => 'Web App Server',
+     }
+  end
+
+end
