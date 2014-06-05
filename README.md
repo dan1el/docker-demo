@@ -26,8 +26,8 @@
 ### Docker
 * Hva er det? (LXC)
 * Likheter og forskjeller med Vagrant
-⋅⋅* Oppskrift
-⋅⋅* Build once, run everywhere
+ * Oppskrift
+ * Build once, run everywhere
 * Repo, public private
 * Layers
 * API
@@ -39,20 +39,20 @@
 * Dockerfile -> CentOS m/ node
 * Docker CLI (ps, stop, inspect, etc)
 * Vår Dockerfile
-⋅⋅* Eksempel app (Kodegjennomgang)
-⋅⋅* Bygg Dockerimage
-⋅⋅* Hvis enkelt script for én node
-⋅⋅* Spinn opp
+ * Eksempel app (Kodegjennomgang)
+ * Bygg Dockerimage
+ * Hvis enkelt script for én node
+ * Spinn opp
 * nginx og cluster
-⋅⋅* Startup script
-⋅⋅* dockergen
-⋅⋅* curl-script
+ * Startup script
+ * dockergen
+ * curl-script
 * Bygg version v1.1 av app
-⋅⋅* Spinn opp node
-⋅⋅* curl-script
+ * Spinn opp node
+ * curl-script
 * Last ned jenkins image fra repo (aespinosa/jenkins)
-⋅⋅* Spinn opp
-⋅⋅* Hvis i browser
+ * Spinn opp
+ * Hvis i browser
 
 ### Vagrant
 * Vagrantfile
