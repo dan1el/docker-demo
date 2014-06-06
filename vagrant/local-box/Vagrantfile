@@ -13,5 +13,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Provision the software we need
   config.vm.provision "shell", path: "provision/java.sh"
   config.vm.provision "shell", path: "provision/maven.sh"
+  config.vm.provision "shell", path: "provision/nginx.sh"
+
+  # Clone code from github repo and run Docker instances
+  config.vm.provision "shell", path: "provision/cloneRepoAndBuild.sh"
+  config.vm.provision "shell", path: "provision/setupDockerInstances.sh"
+  config.vm.provision "shell", run: "always", path: "provision/runStuff.sh"
+  config.vm.provision "shell", run: "always", path: "provision/warmup.sh"
 
 end
