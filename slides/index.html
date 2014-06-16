@@ -77,8 +77,13 @@
 					</h3>
 				</section>
 				<section>
-					<img src="img/ttm.jpg" style="border: 0px; box-shadow: 0 0 0"/>
+					<img src="img/ttm.jpg" style="border: 0px"/>
 				</section>
+			</section>
+
+			<!-- Vagrant continues -->
+			<section>
+				Vagrant goes here
 			</section>
 
 			<!-- Docker section -->
@@ -139,48 +144,81 @@
 				</section>
 			</section>
 
+			<!-- Demo section -->
 			<section>
 				<h1>demo</h1>
 				<img src="img/ghost.png" style="border: 0px"/>
 			</section>
 
+			<!-- Vagrant continues -->
+			<section>
+				Vagrant done?
+			</section>
+
+			<!-- Closing thoughts -->
+			<section>
+				<section>
+					<h2>
+						Zum it up
+					</h2>
+				</section>
+				<section>
+					<h3>
+						Virtuelt utviklingsmiljø
+					</h3>
+				</section>
+				<section>
+					<h3>
+						EC2, OpenStack, OpenShift
+					</h3>
+				</section>
+				<section>
+					<h3>
+						Utviklingsmiljø i skyen
+					</h3>
+				</section>
+				<section>
+					<h3>
+						<img src="img/netflix-chaos-monkey.jpg" style="border: 0px"/>
+					</h3>
+				</section>
+
+			</div>
 
 		</div>
 
-	</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
 
-	<script src="lib/js/head.min.js"></script>
-	<script src="js/reveal.min.js"></script>
+		<script>
 
-	<script>
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
 
-	// Full list of configuration options available here:
-	// https://github.com/hakimel/reveal.js#configuration
-	Reveal.initialize({
-		controls: true,
-		progress: true,
-		history: true,
-		center: true,
+			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-		theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-		transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+			// Parallax scrolling
+			// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+			// parallaxBackgroundSize: '2100px 900px',
 
-		// Parallax scrolling
-		// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-		// parallaxBackgroundSize: '2100px 900px',
+			// Optional libraries used to extend on reveal.js
+			dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+			{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+			]
+		});
 
-		// Optional libraries used to extend on reveal.js
-		dependencies: [
-		{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-		{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-		{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-		{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-		{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-		{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-		]
-	});
+		</script>
 
-	</script>
-
-</body>
-</html>
+	</body>
+	</html>
