@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>docker</title>
+	<title>Viritualisering - Vagrant og Docker</title>
 
 	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 	<meta name="author" content="Hakim El Hattab">
@@ -50,7 +50,7 @@
 				<p>
 					<small><a href="mailto:daniel.n.carlsen@gmail.com">Daniel Nordstrøm Carlsen</a></small>
 					<small>&nbsp;|&nbsp;</small>
-					<small><a href="mailto:haugene@gmail.com">Kristian Haugene</a></small>
+					<small><a href="mailto:kristian.haugene@capgemini.com">Kristian Haugene</a></small>
 				</p>
 			</section>
 
@@ -80,10 +80,120 @@
 					<img src="img/ttm.jpg" style="border: 0px"/>
 				</section>
 			</section>
-
-			<!-- Vagrant continues -->
+          
+            <!-- Viritualization -->
+            <section>
+            	<section>
+					<h2>
+						Viritualisering
+					</h2>
+				</section>
+				<section>
+					<img src="img/HP-server-transparent.png" style="border: 0px; box-shadow: 0 0 0;"/>
+				</section>
+				<section>
+					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: red">
+						<span style="color: white"><strong>Hardware</strong></span>
+					</div>
+				</section>
+				<section>
+					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: blue">
+						<span style="color: white"><strong>Operating system</strong></span>
+					</div>
+					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: red">
+						<span style="color: white"><strong>Hardware</strong></span>
+					</div>
+				</section>
+				<section>
+					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: green">
+						<span style="color: white"><strong>Applications</strong></span>
+					</div>
+					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: blue">
+						<span style="color: white"><strong>Operating system</strong></span>
+					</div>
+					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: red">
+						<span style="color: white"><strong>Hardware</strong></span>
+					</div>
+				</section>
+				<section>
+					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: gray; width: 75%; position: relative">
+						<span style="color: white"><strong>Hypervizor</strong></span>
+					</div>
+					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: green; width: 25%; position: relative">
+						<span style="color: white"><strong>Applications</strong></span>
+					</div>
+					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: blue">
+						<span style="color: white"><strong>Operating system</strong></span>
+					</div>
+					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: red">
+						<span style="color: white"><strong>Hardware</strong></span>
+					</div>
+				</section>
+				<section>
+					<h2>Hvorfor viritualisere?</h2>
+				</section>
+				<section>
+					<img src="img/virtual_spoon.png" style="border: 0px; box-shadow: 0 0 0;"/>
+				</section>
+            </section>
+ 
+			<!-- Vagrant -->
 			<section>
-				Vagrant goes here
+				<section>
+					<img src="img/vagrant_logo.png" style="border: 0px; box-shadow: 0 0 0;"/>
+				</section>
+				<section>
+					<h3>Automatisert viritualisering</h3>
+				</section>
+				<section>
+					<h3>Oppskrift - Vagrantfile</h3>
+				</section>
+				<section>
+					<h3>Kan deles og repeteres</h3>
+				</section>
+				<section>
+					<h3>Provisioning</h3>
+				</section>
+				<section>
+					<h2>Vagrantfile</h2>
+					<pre><code data-trim contenteditable>
+Vagrant.configure("2") do |config|
+  config.vm.box = "box-cutter/ubuntu1404-docker"
+
+  config.vm.provision "shell", path: "provision/java.sh"
+  config.vm.provision "shell", path: "provision/maven.sh"
+  config.vm.provision "shell", path: "provision/nginx.sh"
+  config.vm.provision "shell", path: "provision/cloneRepoAndBuild.sh"
+  config.vm.provision "shell", path: "provision/setupDockerInstances.sh"
+  
+  config.vm.provision "shell", run: "always", path: "provision/runStuff.sh"
+  config.vm.provision "shell", run: "always", path: "provision/warmup.sh"
+end
+					</code></pre>
+				</section>
+				<section>
+					<h2>provision java</h2>
+					<pre><code data-trim contenteditable>
+#!/bin/sh
+set -e
+
+echo "Installing JDK 7"
+apt-get -y -q --force-yes install openjdk-7-jdk
+					</code></pre>
+				</section>
+				<section>
+					<h2>provision maven</h2>
+					<pre><code data-trim contenteditable>
+#!/bin/sh
+set -e
+
+echo "Installing Maven"
+apt-get -y -q --force-yes install maven
+					</code></pre>
+				</section>
+				<section>
+					<h3>Fire it up!</h3>
+				</section>
 			</section>
 
 			<!-- Docker section -->
