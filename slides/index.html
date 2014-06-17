@@ -116,7 +116,7 @@
 					</div>
 				</section>
 				<section>
-					<div class="fragment" style="border: 2px solid; margin-bottom:10px; margin-left: 5px; padding: 5px; width: 20%; float:left">
+					<div class="fragment" style="border: 2px solid; margin-bottom:10px; margin-left: 20px; padding: 5px; width: 20%; float:left">
 						<div style="margin-bottom: 20px"><strong>VM 1</strong></div>
 						<div style="border: 2px solid; border-radius: 25px; margin-bottom: 5px; padding: 5px; background-color: green">
 							<span style="color: white"><strong>App 1</strong></span>
@@ -144,7 +144,7 @@
 						</div>
 					</div>
 					<div style="clear:both"></div>
-					<div style="border: 2px solid; border-radius: 25px; margin-bottom:10px; padding: 5px; background-color: gray; width: 70%; float:left">
+					<div style="border: 2px solid; border-radius: 25px; margin-bottom:10px; margin-left:5px; padding: 5px; background-color: gray; width: 70%; float:left">
 						<span style="color: white"><strong>Hypervizor</strong></span>
 					</div>
 					<div style="border: 2px solid; border-radius: 25px; margin-bottom:10px; padding: 5px; background-color: green; width: 25%; float:right">
@@ -186,6 +186,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "box-cutter/ubuntu1404-docker"
 
+  config.vm.provision "shell", path: "provision/aptUpdate.sh"
   config.vm.provision "shell", path: "provision/java.sh"
   config.vm.provision "shell", path: "provision/maven.sh"
   config.vm.provision "shell", path: "provision/nginx.sh"
@@ -317,6 +318,9 @@ apt-get -y -q --force-yes install maven
 					<h3>
 						<img src="img/netflix-chaos-monkey.jpg" style="border: 0px"/>
 					</h3>
+				</section>
+				<section>
+					<img src="img/capgemini.gif" style="border: 0px; box-shadow: 0 0 0"/>
 				</section>
 
 			</div>
