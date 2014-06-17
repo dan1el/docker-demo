@@ -11,7 +11,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt
 RUN apt-get update
 
 #dependencies
-RUN apt-get install -y --force-yes tzdata-java tzdata=2012b-1 openjdk-7-jre-headless tar
+RUN apt-get install -y --force-yes tzdata-java tzdata=2012b-1 openjdk-7-jdk tar
 RUN apt-get install -y wget
 
 #Jetty
