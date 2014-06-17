@@ -91,12 +91,12 @@
 				<section>
 					<img src="img/HP-server-transparent.png" style="border: 0px; box-shadow: 0 0 0;"/>
 				</section>
-				<section>
+				<section data-transition="none">
 					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: red">
 						<span style="color: white"><strong>Hardware</strong></span>
 					</div>
 				</section>
-				<section>
+				<section data-transition="none">
 					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: blue">
 						<span style="color: white"><strong>Operating system</strong></span>
 					</div>
@@ -104,7 +104,7 @@
 						<span style="color: white"><strong>Hardware</strong></span>
 					</div>
 				</section>
-				<section>
+				<section data-transition="none">
 					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: green">
 						<span style="color: white"><strong>Applications</strong></span>
 					</div>
@@ -116,24 +116,50 @@
 					</div>
 				</section>
 				<section>
-					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: gray; width: 75%; position: relative">
+					<div class="fragment" style="border: 2px solid; margin-bottom:10px; margin-left: 5px; padding: 5px; width: 20%; float:left">
+						<div style="margin-bottom: 20px"><strong>VM 1</strong></div>
+						<div style="border: 2px solid; border-radius: 25px; margin-bottom: 5px; padding: 5px; background-color: green">
+							<span style="color: white"><strong>App 1</strong></span>
+						</div>
+						<div style="border: 2px solid; border-radius: 25px; padding: 5px; background-color: blue">
+							<span style="color: white"><strong>OS 1</strong></span>
+						</div>
+					</div>
+					<div class="fragment" style="border: 2px solid; margin-bottom:10px; margin-left: 5px; padding: 5px; width: 20%; float:left">
+						<div style="margin-bottom: 20px"><strong>VM 2</strong></div>
+						<div style="border: 2px solid; border-radius: 25px; margin-bottom: 5px; padding: 5px; background-color: green">
+							<span style="color: white"><strong>App 2</strong></span>
+						</div>
+						<div style="border: 2px solid; border-radius: 25px; padding: 5px; background-color: blue">
+							<span style="color: white"><strong>OS 2</strong></span>
+						</div>
+					</div>
+					<div class="fragment" style="border: 2px solid; margin-bottom:10px; margin-left: 5px; padding: 5px; width: 20%; float:left">
+						<div style="margin-bottom: 20px"><strong>VM 3</strong></div>
+						<div style="border: 2px solid; border-radius: 25px; margin-bottom: 5px; padding: 5px; background-color: green">
+							<span style="color: white"><strong>App 3</strong></span>
+						</div>
+						<div style="border: 2px solid; border-radius: 25px; padding: 5px; background-color: blue">
+							<span style="color: white"><strong>OS 3</strong></span>
+						</div>
+					</div>
+					<div style="clear:both"></div>
+					<div style="border: 2px solid; border-radius: 25px; margin-bottom:10px; padding: 5px; background-color: gray; width: 70%; float:left">
 						<span style="color: white"><strong>Hypervizor</strong></span>
 					</div>
-					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: green; width: 25%; position: relative">
+					<div style="border: 2px solid; border-radius: 25px; margin-bottom:10px; padding: 5px; background-color: green; width: 25%; float:right">
 						<span style="color: white"><strong>Applications</strong></span>
 					</div>
-					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: blue">
+					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: blue; width: 100%; clear:both">
 						<span style="color: white"><strong>Operating system</strong></span>
 					</div>
-					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: red">
+					<div style="border: 2px solid; border-radius: 25px; margin-top:10px; padding: 5px; background-color: red; width: 100%; clear:both">
 						<span style="color: white"><strong>Hardware</strong></span>
 					</div>
 				</section>
 				<section>
-					<h2>Hvorfor viritualisere?</h2>
-				</section>
-				<section>
-					<img src="img/virtual_spoon.png" style="border: 0px; box-shadow: 0 0 0;"/>
+					<h3>Why is there no spoon?</h3>
+					<img src="img/virtual_spoon.png" style="border: 0px"/>
 				</section>
             </section>
  
@@ -192,7 +218,7 @@ apt-get -y -q --force-yes install maven
 					</code></pre>
 				</section>
 				<section>
-					<h3>Fire it up!</h3>
+					<h3>Vagrant up</h3>
 				</section>
 			</section>
 
