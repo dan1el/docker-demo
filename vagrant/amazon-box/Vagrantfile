@@ -18,14 +18,30 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider :aws do |aws, override|
     aws.keypair_name = "docker-demo"
     override.ssh.private_key_path = "~/.ssh/docker-demo.pem"
-    aws.instance_type = "t1.micro"
-    aws.security_groups = "sg-b7b670d2"
+    aws.instance_type = "m3.2xlarge"
+    aws.security_groups = "docker-images"
     aws.region = "eu-west-1"
-    aws.ami = "ami-896c96fe"
+    aws.ami = "ami-cb4986bc"
     override.ssh.username = "ubuntu"
     aws.tags = {
       'Name' => 'Web App Server',
      }
   end
+  
+  # Provision the software we need
+  config.vm.provision "shell", path: "provision/aptUpdate.sh"
+  config.vm.provision "shell", path: "provision/git.sh"
+  config.vm.provision "shell", path: "provision/docker.sh"
+  config.vm.provision "shell", path: "provision/java.sh"
+  config.vm.provision "shell", path: "provision/maven.sh"
+  config.vm.provision "shell", path: "provision/nginx.sh"
+
+  # Clone code from github repo and run Docker instances
+  config.vm.provision "shell", path: "provision/cloneRepoAndBuild.sh"
+  config.vm.provision "shell", path: "provision/setupDockerInstances.sh"
+  config.vm.provision "shell", run: "always", path: "provision/runStuff.sh"
+  config.vm.provision "shell", run: "always", path: "provision/warmup.sh"
+
+
 
 end

@@ -11,6 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "box-cutter/ubuntu1404-docker"
 
   # Provision the software we need
+  config.vm.provision "shell", path: "provision/aptUpdate.sh"
   config.vm.provision "shell", path: "provision/java.sh"
   config.vm.provision "shell", path: "provision/maven.sh"
   config.vm.provision "shell", path: "provision/nginx.sh"
