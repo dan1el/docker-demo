@@ -46,16 +46,10 @@
  * curl-script
 * Last ned jenkins image fra repo (aespinosa/jenkins)
  * Spinn opp
- * Hvis i browser
-
-## Vagrant
-* Vagrantfile
-* SSH til server
-* Inception! A dream within a dream!
-* Docker run!
-* Vagrant Docker integrasjon - Windows/OS X
+ * Vis i browser
 
 ## Avslutning
+* Vagrant Docker integrasjon - Windows/OS X
 * Virtuelt utviklingsmiljø
 * Vagrant og Docker støtter EC2, OpenStack, OpenShift etc.
 * Utviklingsmiljø i skyen
