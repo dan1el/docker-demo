@@ -49,7 +49,6 @@
  * Vis i browser
 
 ## Avslutning
-* Vagrant Docker integrasjon - Windows/OS X
 * Virtuelt utviklingsmiljø
 * Vagrant og Docker støtter EC2, OpenStack, OpenShift etc.
 * Utviklingsmiljø i skyen
