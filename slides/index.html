@@ -253,9 +253,24 @@ apt-get -y -q --force-yes install maven
 					<img src="img/docker_vm.jpg" style="border: 0px"/>
 				</section>
 				<section>
-					<h3>
-						Dockerfile
-					</h3>
+					<h2>Dockerfile</h2>
+					<pre><code data-trim contenteditable>
+FROM ubuntu
+RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+RUN apt-get update
+
+RUN apt-get install -y --force-yes tzdata-java tzdata=2012b-1 openjdk-7-jre-headless tar
+RUN apt-get install -y wget
+
+RUN mkdir /opt/jetty
+RUN wget http://download.eclipse.org/jetty/stable-9/dist/jetty-distribution-9.2.1.v20140609.tar.gz -O jetty.tar.gz
+RUN tar zxvf jetty.tar.gz -C /opt/jetty --strip-components=1
+
+VOLUME ["/opt/jetty/webapps"]
+EXPOSE 8080
+CMD ["/opt/jetty/bin/jetty.sh", "-d", "run"]
+
+				</code></pre>
 				</section>
 				<section>
 					<h3>
