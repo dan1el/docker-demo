@@ -34,21 +34,15 @@
 
 ## DEMO
 * Docker search
-* CentOS m/ vim
-* Dockerfile -> CentOS m/ vim
-* Dockerfile -> CentOS m/ node
+* docker pull centos
+* CentOS yum install
 * Docker CLI (ps, stop, inspect, etc)
 * Vår Dockerfile
- * Eksempel app (Kodegjennomgang)
  * Bygg Dockerimage
  * Hvis enkelt script for én node
- * Spinn opp
 * nginx og cluster
  * Startup script
  * dockergen
- * curl-script
-* Bygg version v1.1 av app
- * Spinn opp node
  * curl-script
 * Last ned jenkins image fra repo (aespinosa/jenkins)
  * Spinn opp
