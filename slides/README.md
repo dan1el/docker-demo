@@ -52,4 +52,4 @@
 * Virtuelt utviklingsmiljø
 * Vagrant og Docker støtter EC2, OpenStack, OpenShift etc.
 * Utviklingsmiljø i skyen
-* Chaos Monkey og Simian Army!
+* Fancy Netflix stuff
