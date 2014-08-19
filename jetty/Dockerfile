@@ -17,7 +17,7 @@ RUN apt-get install -y wget
 #Jetty
 RUN mkdir /opt/jetty
 
-RUN wget http://download.eclipse.org/jetty/stable-9/dist/jetty-distribution-9.2.1.v20140609.tar.gz -O jetty.tar.gz
+RUN wget http://download.eclipse.org/jetty/9.2.1.v20140609/dist/jetty-distribution-9.2.1.v20140609.tar.gz -O jetty.tar.gz
 
 RUN tar zxvf jetty.tar.gz -C /opt/jetty --strip-components=1
 
